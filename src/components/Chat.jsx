@@ -44,7 +44,7 @@ function Chat({room}) {
     }
 
   return (
-    <div className='w-full py-2'>
+    <div className='w-full py-2 px-2'>
 
     <div className='flex justify-center border-2 border-b-0 items-center bg-blue-500 py-8 font-black rounded-t-2xl text-[24px] container mx-auto'>
         <p>Welcome to: {room.toUpperCase()}</p>
@@ -54,7 +54,7 @@ function Chat({room}) {
         {messages.map((message) => {
             return(
                 <div key={message}>
-                    <p><span className='font-bold text-blue-500'>{message.user}:</span> {message.text}</p>
+                    <p className='w-[300px]'><span className='font-bold text-blue-500'>{message.user}:</span> {message.text}</p>
                 </div>
             )
             
@@ -63,7 +63,7 @@ function Chat({room}) {
     </div>
 
       <form onSubmit={handleSubmit} className='container mx-auto flex justify-center items-center border-2 rounded-2xl mt-4'>
-        <input placeholder='Type your message here...' onChange={(e) => setNewMessage(e.target.value)} value={newMessage} className='rounded-l-2xl w-full p-4'/>
+        <input placeholder='Type your message here...' onChange={(e) => setNewMessage(e.target.value)} value={newMessage} className='rounded-l-2xl w-full p-4 ' maxlength="25"/>
         <button type='submit' className='p-4 w-[150px] rounded-r-2xl bg-blue-500 '>Send</button>
       </form>
     </div>

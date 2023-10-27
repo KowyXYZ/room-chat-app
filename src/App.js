@@ -37,25 +37,25 @@ function App() {
     <div>
       {room ? 
 
-      <div>
+      <div className="">
         <Chat room={room}/>
       </div> 
       
       : 
       
       <div className="w-full py-12">
-        <div className="container mx-auto flex justify-center items-center flex-col gap-4 ">
+        <div className="container mx-auto flex justify-center text-center items-center flex-col gap-4 ">
           <div className="flex flex-col text-center justify-center gap-2">
             <label className="text-[24px] font-semibold">Enter Room Name</label>
-            <input type="text" placeholder="?" className="px-3 py-2 rounded-2xl w-96" ref={roomInputRef}/>
+            <input type="text" placeholder="?" className="px-3 py-2 rounded-2xl sm:w-96 w-80" ref={roomInputRef}/>
           </div>
         
-          <button className="bg-blue-500 px-8 py-2 rounded-2xl text-[18px] font-bold" onClick={() => setRoom(roomInputRef.current.value)}>Enter</button>
+          <button className="bg-blue-500 px-12 py-2 rounded-2xl text-[18px] font-bold" onClick={() => setRoom(roomInputRef.current.value)}>Enter</button>
         </div>
         
       </div>}
-      <div className="flex justify-center items-center">
-        <button className="bg-red-600 px-8 py-2 rounded-2xl mt-4" onClick={signUserOut}>Sign out</button>
+      <div className="flex justify-center items-center ">
+        <button className="bg-red-600 px-4 py-2 rounded-2xl sm:mt-4" onClick={signUserOut}>Sign out</button>
       </div>
     </div>
   )
